@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find your next hackathon teammate with TeamUp.">
+  <title>TeamUp | Find Your Hackathon Team</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">T</span> TeamUp</a>
+    <nav aria-label="Main navigation">
+      <a href="#discover">Discover</a>
+      <a href="#how-it-works">How it works</a>
+      <button class="button button-small" id="openProfileTop">Create profile</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> YOUR NEXT PROJECT STARTS HERE</p>
+        <h1>Great ideas need<br><span>great teammates.</span></h1>
+        <p class="hero-text">Find students with complementary skills, meet your next collaborator, and build something worth showing off.</p>
+        <div class="hero-actions">
+          <a class="button" href="#discover">Find teammates <span aria-hidden="true">→</span></a>
+          <button class="button button-outline" id="openProfileHero">Join TeamUp</button>
+        </div>
+        <div class="hero-note"><span class="avatar-stack"><i>A</i><i>M</i><i>R</i></span><span>Students with different skills. One shared goal.</span></div>
+      </div>
+      <div class="hero-art" aria-label="Team collaboration illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="float-card float-card-top"><span class="mini-icon purple">✦</span><span><b>Find your people</b><small>Skills that fit your idea</small></span></div>
+        <div class="team-illustration">
+          <div class="person person-one"><div class="person-head"></div><div class="person-body"></div></div>
+          <div class="person person-two"><div class="person-head"></div><div class="person-body"></div></div>
+          <div class="person person-three"><div class="person-head"></div><div class="person-body"></div></div>
+          <div class="idea-bubble">✦</div>
+          <div class="code-bubble">&lt;/&gt;</div>
+        </div>
+        <div class="float-card float-card-bottom"><span class="mini-icon green">✓</span><span><b>Team assembled</b><small>Ready to build something</small></span></div>
+      </div>
+    </section>
+
+    <section class="discover section-wrap" id="discover">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COMMUNITY</p><h2>Meet your next teammate</h2><p class="muted">Explore student profiles and find the skills your project needs.</p></div>
+        <button class="button" id="openProfileSection">+ Add your profile</button>
+      </div>
+
+      <div class="filters">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search names, skills or interests..." aria-label="Search students"></label>
+        <label class="filter-label"><span class="sr-only">Filter by skill</span>
+          <select id="skillFilter" aria-label="Filter by skill">
+            <option value="">All skills</option>
+            <option>HTML</option><option>CSS</option><option>JavaScript</option>
+            <option>Python</option><option>Java</option><option>Node.js</option>
+            <option>Machine Learning</option><option>Figma</option><option>SQL</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="statusMessage" class="status-message" role="status"></div>
+      <div id="studentGrid" class="student-grid">
+        <div class="loading-card">Loading student profiles...</div>
+      </div>
+      <p id="emptyState" class="empty-state" hidden>No students match that search yet. Try another skill or add your profile.</p>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-wrap">
+        <p class="eyebrow">SIMPLE BY DESIGN</p><h2>From idea to team in three steps</h2>
+        <div class="steps-grid">
+          <article class="step-card"><span class="step-number">01</span><div class="step-icon">◎</div><h3>Create your profile</h3><p>Share your skills, interests, and the role you want to play.</p></article>
+          <article class="step-card"><span class="step-number">02</span><div class="step-icon">⌕</div><h3>Discover your match</h3><p>Search for people whose skills complement your project.</p></article>
+          <article class="step-card"><span class="step-number">03</span><div class="step-icon">↗</div><h3>Send a request</h3><p>Introduce yourself and start a conversation about building together.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="requests-section section-wrap" id="requests">
+      <div class="section-heading"><div><p class="eyebrow">YOUR ACTIVITY</p><h2>Collaboration requests</h2><p class="muted">Requests submitted from this demo appear here.</p></div><button class="button button-outline" id="refreshRequests">Refresh requests</button></div>
+      <div id="requestList" class="request-list"><p class="muted">Loading requests...</p></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">T</span> TeamUp</a><p>Build together. Learn together. Ship together.</p><small>Student project demo · TeamUp</small></footer>
+
+  <dialog id="profileDialog" class="modal">
+    <form id="profileForm" class="modal-form">
+      <div class="modal-heading"><div><p class="eyebrow">JOIN THE COMMUNITY</p><h2>Create your profile</h2></div><button type="button" class="close-button" data-close="profileDialog" aria-label="Close">×</button></div>
+      <label>Your name<input name="name" required maxlength="60" placeholder="e.g. Praneetha Sri"></label>
+      <label>Preferred role<input name="role" required maxlength="60" placeholder="e.g. Frontend Developer"></label>
+      <label>Skills <small>Separate with commas</small><input name="skills" required maxlength="160" placeholder="HTML, CSS, JavaScript"></label>
+      <label>Interests <small>Separate with commas</small><input name="interests" required maxlength="160" placeholder="Web Development, AI/ML"></label>
+      <label>Short introduction<textarea name="bio" required maxlength="240" rows="3" placeholder="What would you like to build with a team?"></textarea></label>
+      <p class="form-message" id="profileFormMessage" role="status"></p>
+      <button class="button button-full" type="submit">Save profile</button>
+    </form>
+  </dialog>
+
+  <dialog id="requestDialog" class="modal">
+    <form id="requestForm" class="modal-form">
+      <div class="modal-heading"><div><p class="eyebrow">MAKE A CONNECTION</p><h2>Send a team-up request</h2></div><button type="button" class="close-button" data-close="requestDialog" aria-label="Close">×</button></div>
+      <p class="muted" id="requestRecipient"></p>
+      <input type="hidden" name="studentId">
+      <label>Your name<input name="fromName" required maxlength="60" placeholder="Enter your name"></label>
+      <label>Message<textarea name="message" required maxlength="300" rows="4" placeholder="Hi! I'm working on a hackathon idea and would love to team up..."></textarea></label>
+      <p class="form-message" id="requestFormMessage" role="status"></p>
+      <button class="button button-full" type="submit">Send request</button>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

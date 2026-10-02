@@ -1,0 +1,89 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Aarav Sharma",
+      "role": "Frontend Developer",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "interests": [
+        "Web Development",
+        "UI/UX"
+      ],
+      "bio": "Interested in building creative and user-friendly web applications."
+    },
+    {
+      "id": 2,
+      "name": "Priya Reddy",
+      "role": "Backend Developer",
+      "skills": [
+        "Node.js",
+        "Express",
+        "REST API"
+      ],
+      "interests": [
+        "Backend",
+        "APIs"
+      ],
+      "bio": "Enjoys working with APIs and building backend systems."
+    },
+    {
+      "id": 3,
+      "name": "Rahul Kumar",
+      "role": "Data & AI Enthusiast",
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "SQL"
+      ],
+      "interests": [
+        "AI",
+        "Data Science"
+      ],
+      "bio": "Interested in solving real-world problems using data and AI."
+    },
+    {
+      "id": 4,
+      "name": "Sneha Patel",
+      "role": "Full Stack Developer",
+      "skills": [
+        "JavaScript",
+        "Node.js",
+        "MongoDB"
+      ],
+      "interests": [
+        "Full Stack",
+        "Hackathons"
+      ],
+      "bio": "Loves participating in hackathons and building full-stack projects."
+    },
+    {
+      "id": 5,
+      "name": "EDE PRANEETHA SRI",
+      "role": "frontend developer",
+      "skills": [
+        "html",
+        "css",
+        "js"
+      ],
+      "interests": [
+        "web development"
+      ],
+      "bio": "need a person who is interseted in web development and must pursue skills in html,css,js"
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "fromName": "pranee",
+      "toStudentId": 2,
+      "toStudentName": "Priya Reddy",
+      "message": "hi iam working in hackathon and need teammate who is intersted in web development",
+      "status": "Pending",
+      "createdAt": "2026-10-02T06:55:58.625Z"
+    }
+  ]
+}

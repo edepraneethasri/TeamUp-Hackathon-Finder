@@ -1,0 +1,12 @@
+{
+  "name": "teamup-hackathon-finder",
+  "version": "1.0.0",
+  "description": "A beginner-friendly full-stack hackathon teammate finder",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
