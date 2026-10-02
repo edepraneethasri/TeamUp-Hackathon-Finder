@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const DATA_FILE = path.join(__dirname, "data.json");
 
@@ -192,7 +192,6 @@ app.get("/api/health", (req, res) => {
     });
 });
 //server start
-app.listen(PORT, () => {
-
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`TeamUp server running at http://localhost:${PORT}`);
 });
